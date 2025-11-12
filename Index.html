@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Los Premios</title>
+  <link rel="stylesheet" href="Invader.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="navbar-top">
+    <h1>Invader Awards</h1>
+    <div class="login-btn">
+      <button>Iniciar sesión</button>
+    </div>
+  </div>
+
+  <div class="navbar-bottom">
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrarSeccion('home')">HOME</a></li>
+        <li><a href="#" onclick="mostrarSeccion('votaciones')">NOMINADOS</a></li>
+        <li><a href="#" onclick="mostrarSeccion('evento')">EVENTO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="seccion activa">
+  <div class="hero">
+    <h2>Invader Awards</h2>
+    <p>Donde los mejores juegos del año reciben el reconocimiento que merecen.</p>
+  </div>
+
+  <div class="home-section">
+    <h3>Destacados del Año</h3>
+    <div class="highlights">
+      <div class="highlight">
+        <img src="https://picsum.photos/300/180?1" alt="Nominado 1">
+        <p><strong>Nominado 1</strong><br>Juego que marcó tendencia.</p>
+      </div>
+      <div class="highlight">
+        <img src="https://picsum.photos/300/180?2" alt="Nominado 2">
+        <p><strong>Nominado 2</strong><br>Innovador y visualmente impresionante.</p>
+      </div>
+      <div class="highlight">
+        <img src="https://picsum.photos/300/180?3" alt="Nominado 3">
+        <p><strong>Nominado 3</strong><br>Una experiencia inolvidable.</p>
+      </div>
+    </div>
+    <button class="verMas" onclick="mostrarSeccion('votaciones')">Ver todos los nominados</button>
+  </div>
+
+  <div class="home-section evento-preview">
+    <h3>El Evento</h3>
+    <p>Prepárate para una noche muy larga</p>
+    <p><strong>15 de diciembre de 2025 – Atlantis</strong></p>
+    <button class="verMas" onclick="mostrarSeccion('evento')">Descubre más</button>
+  </div>
+</section>
+
+<!-- VOTACIONES -->
+<section id="votaciones" class="seccion">
+  <div class="content">
+    <h2>Mejor Proyecto del Evento</h2>
+    <p>Explora los proyectos nominados y elige tu favorito.</p>
+
+    <div class="carousel-container">
+      <button id="arrowLeft" class="arrow left" aria-label="Anterior">&#10094;</button>
+
+      <div id="carruselProyectos" class="carousel">
+        <div class="carousel-item">
+          <img src="imagenes/Grupo Alexis.jpg"
+               alt="Proyecto 1"
+               data-title="Proyecto 1"
+               data-desc="Juego de plataformas con temática espacial."
+               data-members="Miembros: Ana, Luis y Alexis" />
+        </div>
+
+        <div class="carousel-item">
+          <img src="imagenes/Grupo Christopher.jpg"
+               alt="Proyecto 2"
+               data-title="Proyecto 2"
+               data-desc="Simulador de VR centrado en reflejos musicales."
+               data-members="Miembros: Sofía, Mario y Carla" />
+        </div>
+
+        <div class="carousel-item">
+          <img src="imagenes/Grupo Ellie 2.jpg"
+               alt="Proyecto 3"
+               data-title="Proyecto 3"
+               data-desc="Aventura narrativa con decisiones morales."
+               data-members="Miembros: Diego, Paula y Fernanda" />
+        </div>
+
+        <div class="carousel-item">
+          <img src="imagenes/Grupo Fernando.jpg"
+               alt="Proyecto 4"
+               data-title="Proyecto 4"
+               data-desc="Shooter cooperativo con ambientación cyberpunk."
+               data-members="Miembros: Fernando, Iván y Rebeca" />
+        </div>
+
+        <div class="carousel-item">
+          <img src="imagenes/Grupo Sofia 2.jpg"
+               alt="Proyecto 5"
+               data-title="Proyecto 5"
+               data-desc="RPG con exploración libre y narrativa ramificada."
+               data-members="Miembros: Sofía, Arturo y Valeria" />
+        </div>
+      </div>
+
+      <button id="arrowRight" class="arrow right" aria-label="Siguiente">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL (CENTRADO) -->
+<div id="proyectoModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="cerrar-modal" aria-label="Cerrar">&times;</button>
+
+    <!-- NO mostramos imagen dentro del modal: solo texto -->
+    <div class="modal-body">
+      <div class="modal-text">
+        <h2 id="modalTitulo">Nombre del Proyecto</h2>
+        <p id="modalDescripcion">Descripción breve del proyecto seleccionado.</p>
+        <p id="modalMiembros"><strong>Miembros:</strong> Alexis, Juan, María</p>
+        <div class="modal-actions">
+          <button id="btnVotar">Votar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENTO -->
+<section id="evento" class="seccion">
+  <div class="content">
+    <h2>El Evento</h2>
+    <p>La gran noche de los videojuegos llega con presentaciones, premios y sorpresas.</p>
+    <p><strong>Fecha:</strong> 15 de diciembre, 2025</p>
+    <p><strong>Lugar:</strong> Teatro Principal, Ciudad de México</p>
+    <button onclick="mostrarSeccion('home')">Volver al inicio</button>
+  </div>
+</section>
+
+<script src="invader.js"></script>
+</body>
+</html>
